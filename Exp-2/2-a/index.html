@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Map</title>
+    <link rel="stylesheet" href="./styles/map.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading" style="font-family: Arial, Helvetica, sans-serif;">INDIA MAP</h1>
+        <img src="./assets/india-map.jpg" alt="India Map" usemap="#india-map" class="map-img" />
+
+        <map name="india-map">
+            <area target="" alt="andhra_pradesh" title="andhra_pradesh" href="" coords="272,546,36" shape="circle">
+            <area target="" alt="tamil_nadu" title="tamil_nadu" href="" coords="221,695,277,720" shape="rect">
+            <area target="" alt="kerala" title="kerala" href="" coords="187,699,202,737" shape="rect">
+            <area target="" alt="karnataka" title="karnataka" href="" coords="158,574,197,555,195,593,220,658,159,646" shape="poly">
+            <area target="" alt="maharashtra" title="maharashtra" href="" coords="120,465,126,533,200,503,240,455,165,434" shape="poly">
+            <area target="" alt="madhya_pradesh" title="madhya_pradesh" href="" coords="192,374,180,402,251,410,327,392,250,354" shape="poly">
+            <area target="" alt="rajasthan" title="rajasthan" href="" coords="138,284,49" shape="circle">
+            <area target="" alt="orissa" title="orissa" href="" coords="406,443,31" shape="circle">
+            <area target="" alt="gujarat" title="gujarat" href="" coords="67,392,125,359" shape="rect">
+            <area target="" alt="uttar_pradesh" title="uttar_pradesh" href="" coords="309,281,36" shape="circle">
+            <area target="" alt="jammu_and_kashmir" title="jammu_and_kashmir" href="" coords="180,106,159,76,174,20,270,61,262,105" shape="poly">
+            <area target="" alt="chattisgarh" title="chattisgarh" href="" coords="321,433,358,400" shape="rect">
+            <area target="" alt="west_bengal" title="west_bengal" href="" coords="483,380,25" shape="circle">
+            <area target="" alt="bihar" title="bihar" href="" coords="434,308,22" shape="circle">
+            <area target="" alt="jharkhand" title="jharkhand" href="" coords="416,368,21" shape="circle">
+            <area target="" alt="himachal_pradesh" title="himachal_pradesh" href="" coords="212,130,256,158" shape="rect">
+            <area target="" alt="punjab" title="punjab" href="" coords="169,165,201,181" shape="rect">
+        </map>
+    </div>
+    
+    <div class="modal" id="state-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="state"></h2>
+            </div>
+            <div class="modal-body">
+                <p id="content"></p>
+            </div>
+            <div class="modal-footer">
+                <p>For more Info - <a id="clink" href="">visit &#8599;</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
