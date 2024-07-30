@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/home.css"/>
+    <title>REC</title>
+</head>
+<body>
+    <div class="nav">
+        <p class="head-text">RAJALAKSHMI</p>
+        <p>ENGINEERING COLLEGE</p>
+    </div>
+    <p class="addr">Rajalakshmi Nagar, Thandalam, Chennai - 602 105</p>
+    <div class="container1">
+        <div class="side-nav">
+            <a class="cse" onclick="display('home')">CSE</a>
+            <a class="side-nav-ele" onclick="display('intro')">Introduction</a><br>
+            <a class="side-nav-ele" onclick="display('opp')">Opportunities</a><br>
+            <a class="side-nav-ele" onclick="display('faculty')">Faculty Members</a><br>
+            <a class="side-nav-ele" onclick="display('lab')">Lab Faculty</a><br>
+            <a class="side-nav-ele" onclick="display('news')">News</a>
+        </div>
+        <div id="home" class="home-text">
+            <h2>Welcome to the Department of CSE</h2>
+        </div>
+        <div class="content" id="intro">
+            <h1>INTRODUCTION</h1>
+            <h2>Vision</h2>
+            <p>To promote highly Ethical and Innovative Computer Professionals through excellence in teaching,
+                training and research.</p>
+            <h2>Mission</h2>
+            <p>To produce globally competent professionals, motivated to learn the emerging technologies and to
+                be innovative in solving real world problems.
+            </p>
+            <p>To promote researchactivities amongst the students and the members of faculty that could benefit the society</p>
+            <p>To impart moral and ethical values in their profession.</p>
+        </div>
+
+        <div class="content" id="opp">
+            <h1>OPPORTUNITIES</h1>
+            <p>Computer science and Engineering graduates are the pillars of the current and emerging information era. 
+                Opportunities include pursuing Master of Science Programs in reputed Universities of U.S. and taking up 
+                research assignments in Hardware, System Software, Computer Engineering, Multimedia, Networking and 
+                Communication areas.
+            </p>
+            <p>
+                Job opportunities are ever increasing and are varied in nature. System study, analysis, Design and 
+                Programming are the inherent phases in Application Development and each one of them provides enormous 
+                potential to the Computer Science and engineering graduates to shape themselves in their career. Hi-end 
+                profiles include Artificial Intelligence, Robotics, Graphic Solutions and Simulations.
+            </p>
+            <p>
+                This degree program prepares students for Advanced, Technical Computer Systems Design and Development 
+                Work. It includes the study of the Database Design, Data Communications, Procedural and Object Oriented 
+                Programming, Operating Systems Design, Algorithm Development and Applications of Artificial Intelligence. 
+                The curriculum includes basic course work in Electronics Technology and the Theory of Programming Languages.
+                Students focus on developing computer-based solutions involving hardware and software components and 
+                integration. Graduates are qualified to work in a range of positions, from entry-level computer scientists
+                and system engineers to project managers leading advanced applications of computer science to real-world 
+                problems. The department has since broadened its research strengths.
+            </p>
+        </div>
+
+        <div class="content" id="faculty">
+            <h1>FACULTY MEMBERS</h1>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Dr.V.Murali Bhaskaran</td>
+                    <td>Professor and Dean</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Dr.P.Kumar</td>
+                    <td>Head and Director</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Dr.Revathy P</td>
+                    <td>Professor</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content" id="lab">
+
+        </div>
+
+        <div class="content" id="news">
+            <h1>NEWS</h1>
+            <h2>RESEARCH CENTRE</h2>
+            <p>The department is recognized as a Research Center for M.S./Ph.D. by the ANNA UNIVERSITY.</p>
+            <h2>AFFILIATION</h2>
+            <p>The Department has PERMANENT AFFILIATION from ANNA UNIVERSITY.</p>
+            <h2>AICTE-CII SURVEY</h2>
+            <p>The department is Ranked 3rd in the AICTE-CII Survey conducted Nationwide for Industry Institute Interaction.</p>
+            <h2>IIT BOMBAY REMOTE CENTER</h2>
+            <p>The department acts as Remote Center for conducting Spoken Tutorials, workshops and certifications by IIT, 
+                BOMBAY in collaboration with ISTE and funded by MHRD.</p>
+            <h2>IBM CENTRE FOR EXCELLENCE</h2>
+            <p>The department is credited with IBM Software Centre for Excellence and the lab is set for the same.</p>
+        </div>
+    </div>
+    <script>
+        function display(id){
+            const allContent = document.getElementsByClassName('content');
+                for (let i = 0; i < allContent.length; i++) {
+                    allContent[i].style.display = 'none';
+                }
+            document.getElementById(id).style.display="block"
+            if(id!=='home'){
+                document.getElementById('home').style.display="none"
+            }
+        }
+    </script>
+</body>
+</html>
