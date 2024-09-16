@@ -11,6 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/*
+import java.io.*;
+import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
+*/
+
 @WebServlet("/AddEmployee")
 public class AddEmployeeServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
