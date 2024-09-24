@@ -1,0 +1,20 @@
+$('#element').click(function(){ /* Do something */ });
+
+$('#element').dblclick(function(){ /* Do something */ });
+
+$('#element').mousedown(function(){ /* Do something */ });
+
+$('#element').mouseup(function(){ /* Do something */ });
+
+$('#element').mouseenter(function(){ /* Do something */ });
+
+$('#element').mouseleave(function(){ /* Do something */ });
+
+$('#element').mouseover(function(){ /* Do something */ });
+
+$('#element').mouseout(function(){ /* Do something */ });
+
+$('#element').mousemove(function(){ /* Do something */ });
+
+$('#element').hover(function(){ /* Mouse enter */ }, function(){ /* Mouse leave */ });
+

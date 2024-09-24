@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        .highlight{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        Hey iam present inside div!! (not a p tag though :-|)
+    </div>
+    <img id="logo" src="logo.png" alt="logo" />
+    <input type="text" id="inputfield" value="old value" />
+
+    <div id="parent">
+        <p>text 1</p>
+    </div>
+
+    <div id="toremove">
+        <p>This text will be removed</p>
+    </div>
+
+    <div id="tohighlight">
+        This text has been highlighted
+    </div>
+
+    <script>
+        //html()
+        $('#content').html(
+            '<p>Iam finally a p tag dudeee!</p>' 
+        )
+
+        //text()
+        $('#content').text(
+            '<p>Iam finally a p tag dudeee!</p>' 
+        )
+
+        //css
+        $('#content p').css(
+            'color','blue'
+        )
+
+        //attr()
+        $('#logo').attr('alt','changed by attr()')
+
+        //val()
+        $('#inputfield').val('new value')
+
+        //append()
+        $('#parent').append(
+            '<p>text 2</p> <p>text 3</p>'
+        )
+
+        //prepend()
+        $('#parent').prepend(
+            '<p>Text 0</p>'
+        )
+
+        //remove()
+        $('#toremove').remove()
+
+        //addClass
+        $('#tohighlight').addClass('highlight')
+
+        //removeClass
+        $('#tohighlight').removeClass('highlight')
+
+        //toggleClass
+        $('#tohighlight').toggleClass('highlight')
+    </script>
+</body>
+</html>

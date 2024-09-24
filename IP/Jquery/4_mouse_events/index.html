@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        .container{
+            padding: 10px;
+            border: solid 1px black;
+        }
+
+        .highlight{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="mybutton">Click Me!</button>
+    </div>
+    <br/>
+    <div class="container">
+        <div class="item">item 1</div>
+        <div class="item">item 2</div>
+        <div class="item">item 3</div>
+        <div class="item">item 4</div>
+    </div>
+    
+    <br/>
+    <button id="alertbtn">Alert button</button>
+
+    <p></p>
+    <button id="hoverbtn">Hover button</button>
+
+    <p></p>
+    <input type="text" id="nameinput" name="name" placeholder="enter your name" />
+
+    <p></p>
+    <div id="parent">
+        <button class="child">Child button</button>
+    </div>
+
+    <button id="clickbutton">Click me</button>
+
+    <script>
+        $('#mybutton').click(function(){
+            var parentEle = $(this).parent();
+            parentEle.toggleClass('highlight');
+        })
+
+        $('.item').click(function(){
+            var siblings = $(this).siblings()
+            siblings.toggleClass('highlight')
+        })
+
+        $('#alertbtn').click(function(){
+            alert('hello');
+        })
+
+        //first argument - while hover
+        //second argument - while not hover
+        $('#hoverbtn').hover(function(){
+            $(this).parent().css(
+                'background-color','blue'
+            )
+        }, function(){
+            $(this).parent().css(
+                'background-color','white'
+            )
+        })
+
+
+        //focus() - on focus
+        $('#nameinput').focus(function(){
+            $(this).css(
+                'border','5px solid green'
+            )
+        })
+
+        //blur() - out of focus (after focus)
+        $('#nameinput').blur(function(){
+            $(this).css(
+                'border','5px solid red'
+            )
+        })
+
+        //listen to events
+        //on()
+        $('#parent').on('click','.child',function(){
+            alert('child button got clicked!!')
+        })
+
+        //off()
+        //alert msg will show only on the first click
+        $('#clickbutton').on('click',showAlert)
+        function showAlert(){
+            alert('click me button got clicked');
+            $('#clickbutton').off('click',showAlert)
+        }
+    </script>
+</body>
+</html>

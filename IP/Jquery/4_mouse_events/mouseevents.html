@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events Demo</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        .container {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid black;
+            width: 300px;
+            text-align: center;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="element">
+        Hover, click, or interact with me to trigger events!
+    </div>
+
+    <script>
+        // Click event
+        $('#element').click(function() {
+            alert('Click event triggered!');
+            $(this).toggleClass('highlight');
+        });
+
+        // Double click event
+        $('#element').dblclick(function() {
+            alert('Double-click event triggered!');
+        });
+
+        // Mouse down event
+        $('#element').mousedown(function() {
+            console.log('Mouse down event triggered!');
+        });
+
+        // Mouse up event
+        $('#element').mouseup(function() {
+            console.log('Mouse up event triggered!');
+        });
+
+        // Mouse enter event
+        $('#element').mouseenter(function() {
+            console.log('Mouse enter event triggered!');
+        });
+
+        // Mouse leave event
+        $('#element').mouseleave(function() {
+            console.log('Mouse leave event triggered!');
+        });
+
+        // Mouse over event
+        $('#element').mouseover(function() {
+            console.log('Mouse over event triggered!');
+        });
+
+        // Mouse out event
+        $('#element').mouseout(function() {
+            console.log('Mouse out event triggered!');
+        });
+
+        // Mouse move event
+        $('#element').mousemove(function() {
+            console.log('Mouse move event triggered!');
+        });
+
+        // Hover event (Mouse enter and leave combined)
+        $('#element').hover(
+            function() {
+                console.log('Hover event: Mouse enter');
+            },
+            function() {
+                console.log('Hover event: Mouse leave');
+            }
+        );
+    </script>
+
+</body>
+</html>

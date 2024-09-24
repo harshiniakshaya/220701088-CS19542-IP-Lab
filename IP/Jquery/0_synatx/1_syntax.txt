@@ -1,0 +1,13 @@
+$(selector).action()
+
+$ = shorthand jQuery function
+selector = string to get HTML element
+action() = jQuery method or function to perform work on the selected elements
+
+----
+selector = document -> selects the entire html page
+action = ready -> after the document gets loaded in the browser
+
+$('h1') -> 'h1' string to select the h1 tag
+
+

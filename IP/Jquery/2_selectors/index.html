@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div id="ele1">hey there! iam harshini</div>
+
+    <div class="class1">This is class 1</div>
+    <div class="class1">This is also class 1</div>
+
+    <p>This is paragraph 1</p>
+    <p>This is paragraph 2</p>
+
+    <h4>This is a form!</h4>
+    <form action="" method="">
+        <input type="name" placeholder="Enter your name"/> 
+        <br />
+
+        <input type="number" placeholder="Enter your roll number"/>
+        <br />
+        
+        <input type="name" name="city" placeholder="Enter your city"/> 
+        <br />
+    </form>
+
+    <a href="https://example.com/">Example.com</a>
+    <a href="https://example.org/">Example.org</a>
+    <a href="https://google.com/">Googel.com</a>
+
+    <div class="container">
+        <p>hello people!!!</p>
+        <p>Don't stalk yaar!!</p>
+    </div>
+
+    <div class="parent">
+        <p>hey, iam direct child</p>
+        <div>
+            <p>hey dude, iam not a direct child!!</p>
+        </div>
+    </div>
+
+
+    <script>
+        // id selector (put '#id_name')
+        $('#ele1').text('hello!!!');
+
+//=================================================
+
+        // class selector (put '.class_name')
+        $('.class1').css(
+            'background-color','pink'
+        )
+
+//=================================================
+
+        // element selector (put nothing :-)))
+        $('p').css(
+            'color','blue'
+        )
+
+        // $('p').hide()
+
+//=================================================
+
+        //attribute selection (put '[attribute_name]')
+        $('[placeholder]').css(
+            'border','2px solid pink'
+        )
+
+//=================================================
+
+        //value selector
+        //giving default value => $('[name="name_of_elemet"]').val('default value')
+        $('[name="city"]').val('chennai')
+
+        //partial value selector
+        //more than one element
+        $('a[href*="example"]').css(
+            'color','red'
+        ) // searches for all the href values having example
+
+        $('a[href^="https://goo"]').css(
+            'color','green' // searches for all the href values starting with https://goo
+        )
+
+//=================================================
+
+        //Descendant selector
+        $('.container p').css(
+            'color','purple'
+        )
+
+//=================================================
+
+        //Child Selector
+        // > -> selects only the direct child
+        $('.parent > p').css(
+            'font-style','italic'
+        )
+
+        $('.parent div p').css(
+            'font-weight','bold'
+        )
+
+    </script>
+</body>
+</html>
