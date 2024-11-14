@@ -1,136 +1,227 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>jQuery Stock Functions Examples</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   </head>
   <body>
-    <h3>JQUERY stock functions</h3>
+    <h1>jQuery Stock Functions Examples</h1>
+
+    <h2>1. $.each()</h2>
+    <p>This function is used to iterate over arrays or objects.</p>
+    <pre><code>
+const fruits = ["Apple", "Banana", "Cherry"];
+
+$.each(fruits, function(index, value) {
+  console.log(index + ": " + value); // Logs each fruit with its index
+});
+</code></pre>
+    <button onclick="runEach()">Show Output</button>
+
+    <h2>2. $.isArray()</h2>
+    <p>This function checks if a value is an array.</p>
+    <pre><code>
+const items = [1, 2, 3];
+const notArray = "Hello";
+
+console.log($.isArray(items)); // true
+console.log($.isArray(notArray)); // false
+</code></pre>
+    <button onclick="runIsArray()">Show Output</button>
+
+    <h2>3. $.trim()</h2>
     <p>
-      In jQuery, "stock functions" refer to built-in utility functions that make
-      it easier to perform common tasks, such as checking data types, iterating
-      over arrays or objects, and manipulating strings.
+      This function removes whitespace from the beginning and end of a string.
     </p>
+    <pre><code>
+const stringWithSpaces = "  Hello World!  ";
+const trimmedString = $.trim(stringWithSpaces);
 
-    <body>
-      <h1>jQuery Stock Functions Examples</h1>
+console.log(trimmedString); // Logs "Hello World!" without surrounding spaces
+</code></pre>
+    <button onclick="runTrim()">Show Output</button>
 
-      <h2>1. $.each()</h2>
-      <p>This function is used to iterate over arrays or objects.</p>
-      <pre><code>
+    <h2>4. $.extend()</h2>
+    <p>
+      This function merges the contents of two or more objects into the first
+      object.
+    </p>
+    <pre><code>
+const defaults = { name: "Unknown", age: 0 };
+const person = { name: "Alice", age: 25, place:"chennai"  };
+
+const extended = $.extend({}, defaults, person);
+
+console.log(extended); // Logs { name: "Alice", age: 25 }
+</code></pre>
+    <button onclick="runExtend()">Show Output</button>
+
+    <h2>5. $.type()</h2>
+    <p>This function returns the type of the argument passed.</p>
+    <pre><code>
+console.log($.type(123)); // "number"
+console.log($.type("Hello")); // "string"
+console.log($.type([1, 2, 3])); // "array"
+console.log($.type({ key: "value" })); // "object"
+</code></pre>
+    <button onclick="runType()">Show Output</button>
+
+    <h2>6. $.inArray()</h2>
+    <p>
+      This function checks if a value is in an array and returns its index;
+      otherwise, it returns -1.
+    </p>
+    <pre><code>
+const colors = ["red", "green", "blue"];
+
+console.log($.inArray("green", colors)); // 1
+console.log($.inArray("yellow", colors)); // -1
+</code></pre>
+    <button onclick="runInArray()">Show Output</button>
+
+    <h2>7. $.isEmptyObject()</h2>
+    <p>This function checks if an object is empty (has no properties).</p>
+    <pre><code>
+const emptyObject = {};
+const nonEmptyObject = { name: "John" };
+
+console.log($.isEmptyObject(emptyObject)); // true
+console.log($.isEmptyObject(nonEmptyObject)); // false
+</code></pre>
+    <button onclick="runIsEmptyObject()">Show Output</button>
+
+    <h2>8. $.now()</h2>
+    <p>
+      This function returns the current timestamp (milliseconds since January 1,
+      1970).
+    </p>
+    <pre><code>
+console.log($.now()); // Logs the current timestamp
+</code></pre>
+    <button onclick="runNow()">Show Output</button>
+
+    <h2>9. $.map()</h2>
+    <p>
+      This function applies a function to each item in an array and returns a
+      new array with the results.
+    </p>
+    <pre><code>
+const numbers = [1, 2, 3];
+const squares = $.map(numbers, function(num) {
+  return num * num;
+});
+
+console.log(squares); // [1, 4, 9]
+</code></pre>
+    <button onclick="runMap()">Show Output</button>
+
+    <h2>10. $.proxy()</h2>
+    <p>
+      This function changes the context of <code>this</code> inside a function,
+      which is useful when passing functions as arguments.
+    </p>
+    <pre><code>
+const person = {
+  name: "Alice",
+  sayName: function() {
+    console.log(this.name);
+  }
+};
+
+const button = $("#myButton");
+button.on("click", $.proxy(person.sayName, person));
+</code></pre>
+    <button onclick="runProxy()">Show Output</button>
+
+    <script>
+      function runEach() {
         const fruits = ["Apple", "Banana", "Cherry"];
-        
-        $.each(fruits, function(index, value) {
-          console.log(index + ": " + value); // Logs each fruit with its index
+        let output = "";
+        $.each(fruits, function (index, value) {
+          output += index + ": " + value + "\n";
         });
-        </code></pre>
+        alert(output);
+      }
 
-      <h2>2. $.isArray()</h2>
-      <p>This function checks if a value is an array.</p>
-      <pre><code>
+      function runIsArray() {
         const items = [1, 2, 3];
         const notArray = "Hello";
-        
-        console.log($.isArray(items)); // true
-        console.log($.isArray(notArray)); // false
-        </code></pre>
+        alert(
+            $.isArray(items) +
+            "\n" +
+            $.isArray(notArray)
+        );
+      }
 
-      <h2>3. $.trim()</h2>
-      <p>
-        This function removes whitespace from the beginning and end of a string.
-      </p>
-      <pre><code>
+      function runTrim() {
         const stringWithSpaces = "  Hello World!  ";
         const trimmedString = $.trim(stringWithSpaces);
-        
-        console.log(trimmedString); // Logs "Hello World!" without surrounding spaces
-        </code></pre>
+        alert(trimmedString);
+      }
 
-      <h2>4. $.extend()</h2>
-      <p>
-        This function merges the contents of two or more objects into the first
-        object.
-      </p>
-      <pre><code>
+      function runExtend() {
         const defaults = { name: "Unknown", age: 0 };
-        const person = { name: "Alice", age: 25 };
-        
+        const person = { name: "Alice", age: 25, place:"chennai" };
         const extended = $.extend({}, defaults, person);
-        
-        console.log(extended); // Logs { name: "Alice", age: 25 }
-        </code></pre>
+        console.log(extended);
+        alert("{name: 'Alice', age: 25, place: 'chennai'}");
+      }
 
-      <h2>5. $.type()</h2>
-      <p>This function returns the type of the argument passed.</p>
-      <pre><code>
-        console.log($.type(123)); // "number"
-        console.log($.type("Hello")); // "string"
-        console.log($.type([1, 2, 3])); // "array"
-        console.log($.type({ key: "value" })); // "object"
-        </code></pre>
+      function runType() {
+        alert(
+            $.type(123) +
+            "\n" +
+            $.type("Hello") +
+            "\n" +
+            $.type([1, 2, 3]) +
+            "\n" +
+            $.type({ key: "value" })
+        );
+      }
 
-      <h2>6. $.inArray()</h2>
-      <p>
-        This function checks if a value is in an array and returns its index;
-        otherwise, it returns -1.
-      </p>
-      <pre><code>
+      function runInArray() {
         const colors = ["red", "green", "blue"];
-        
-        console.log($.inArray("green", colors)); // 1
-        console.log($.inArray("yellow", colors)); // -1
-        </code></pre>
+        alert(
+            $.inArray("green", colors) +
+            "\n" +
+            $.inArray("yellow", colors)
+        );
+      }
 
-      <h2>7. $.isEmptyObject()</h2>
-      <p>This function checks if an object is empty (has no properties).</p>
-      <pre><code>
+      function runIsEmptyObject() {
         const emptyObject = {};
         const nonEmptyObject = { name: "John" };
-        
-        console.log($.isEmptyObject(emptyObject)); // true
-        console.log($.isEmptyObject(nonEmptyObject)); // false
-        </code></pre>
+        alert(
+            $.isEmptyObject(emptyObject) +
+            "\n" +
+            $.isEmptyObject(nonEmptyObject)
+        );
+      }
 
-      <h2>8. $.now()</h2>
-      <p>
-        This function returns the current timestamp (milliseconds since January
-        1, 1970).
-      </p>
-      <pre><code>
-        console.log($.now()); // Logs the current timestamp
-        </code></pre>
+      function runNow() {
+        alert("Current Timestamp: " + $.now());
+      }
 
-      <h2>9. $.map()</h2>
-      <p>
-        This function applies a function to each item in an array and returns a
-        new array with the results.
-      </p>
-      <pre><code>
+      function runMap() {
         const numbers = [1, 2, 3];
-        const squares = $.map(numbers, function(num) {
+        const squares = $.map(numbers, function (num) {
           return num * num;
         });
-        
-        console.log(squares); // [1, 4, 9]
-        </code></pre>
+        console.log(squares)
+        alert("[1, 4, 9]");
+      }
 
-      <h2>10. $.proxy()</h2>
-      <p>
-        This function changes the context of <code>this</code> inside a
-        function, which is useful when passing functions as arguments.
-      </p>
-      <pre><code>
+      function runProxy() {
         const person = {
           name: "Alice",
-          sayName: function() {
-            console.log(this.name);
-          }
+          sayName: function () {
+            alert("Person's Name: " + this.name);
+          },
         };
-        
-        const button = $("#myButton");
-        button.on("click", $.proxy(person.sayName, person));
-        </code></pre>
-    </body>
+        person.sayName.call(person);
+      }
+    </script>
   </body>
 </html>
