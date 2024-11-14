@@ -1,0 +1,135 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  </head>
+  <body>
+    <button id="clickBtn">Click Me</button>
+    <pre>
+        <code>
+          &lt;button id="clickBtn"&gt;Click Me&lt;/button&gt;
+  
+          &lt;script&gt;
+            $("#clickBtn").on("click", function () {
+              alert("Button clicked!");
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+
+    <div
+      id="hoverBox"
+      style="width: 100px; height: 100px; background-color: blue"
+    ></div>
+    <pre>
+        <code>
+          &lt;div id="hoverBox" style="width: 100px; height: 100px; background-color: blue"&gt;&lt;/div&gt;
+  
+          &lt;script&gt;
+            $("#hoverBox").on("mouseenter", function () {
+              $(this).css("background-color", "green"); // Changes to green on hover
+            });
+  
+            $("#hoverBox").on("mouseleave", function () {
+              $(this).css("background-color", "blue"); // Changes back to blue when hover ends
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+
+    <input type="text" id="inputField" placeholder="Type something..." />
+    <pre>
+        <code>
+          &lt;input type="text" id="inputField" placeholder="Type something..." /&gt;
+  
+          &lt;script&gt;
+            $("#inputField").on("keypress", function (event) {
+              console.log("Key pressed: " + event.key);
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+
+    <input type="text" id="focusField" placeholder="Click to focus" />
+    <pre>
+        <code>
+          &lt;input type="text" id="focusField" placeholder="Click to focus" /&gt;
+  
+          &lt;script&gt;
+            $("#focusField").on("focus", function () {
+              $(this).css("background-color", "lightblue"); // Changes color on focus
+            });
+  
+            $("#focusField").on("blur", function () {
+              $(this).css("background-color", ""); // Resets color on blur
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+
+    <h3>jQuery Chaining</h3>
+    <p>
+      Chaining allows you to apply multiple jQuery methods to the same
+      element(s) in a single statement, making code cleaner and more efficient.
+    </p>
+    <div
+      id="box"
+      style="width: 100px; height: 100px; background-color: red"
+    ></div>
+    <button id="chainBtn">Apply Chaining</button>
+    <pre>
+        <code>
+          &lt;div id="box" style="width: 100px; height: 100px; background-color: red"&gt;&lt;/div&gt;
+          &lt;button id="chainBtn"&gt;Apply Chaining&lt;/button&gt;
+  
+          &lt;script&gt;
+            $("#chainBtn").on("click", function () {
+              $("#box")
+                .css("background-color", "yellow") // Changes color to yellow
+                .slideUp(500) // Slides up in 500ms
+                .slideDown(500) // Slides back down in 500ms
+                .fadeOut(500) // Fades out in 500ms
+                .fadeIn(500); // Fades back in in 500ms
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+
+    <script>
+      $("#clickBtn").on("click", function () {
+        alert("Button clicked!");
+      });
+
+      $("#hoverBox").on("mouseenter", function () {
+        $(this).css("background-color", "green"); // Changes to green on hover
+      });
+
+      $("#hoverBox").on("mouseleave", function () {
+        $(this).css("background-color", "blue"); // Changes back to blue when hover ends
+      });
+
+      $("#inputField").on("keypress", function (event) {
+        console.log("Key pressed: " + event.key);
+      });
+
+      $("#focusField").on("focus", function () {
+        $(this).css("background-color", "lightblue"); // Changes color on focus
+      });
+
+      $("#focusField").on("blur", function () {
+        $(this).css("background-color", ""); // Resets color on blur
+      });
+
+      $("#chainBtn").on("click", function () {
+        $("#box")
+          .css("background-color", "yellow") // Changes color to yellow
+          .slideUp(500) // Slides up in 500ms
+          .slideDown(500) // Slides back down in 500ms
+          .fadeOut(500) // Fades out in 500ms
+          .fadeIn(500); // Fades back in in 500ms
+      });
+    </script>
+  </body>
+</html>

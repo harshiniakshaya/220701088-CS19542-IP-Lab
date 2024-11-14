@@ -1,11 +1,226 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!--  -->
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <div
+      id="box"
+      style="width: 100px; height: 100px; background-color: blue"
+    ></div>
+    <pre>
+        <code>
+          &lt;button id="hideBtn"&gt;Hide&lt;/button&gt;
+          &lt;button id="showBtn"&gt;Show&lt;/button&gt;
+          &lt;div id="box" style="width: 100px; height: 100px; background-color: blue"&gt;&lt;/div&gt;
+  
+          &lt;script&gt;
+            $("#hideBtn").click(function () {
+              $("#box").hide(); // Hides the element instantly
+            });
+            $("#showBtn").click(function () {
+              $("#box").show(); // Shows the element instantly
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+    <!--  -->
+    <button id="fadeInBtn">Fade In</button>
+    <button id="fadeOutBtn">Fade Out</button>
+    <div
+      id="box2"
+      style="width: 100px; height: 100px; background-color: red; display: none"
+    ></div>
+    <pre>
+        <code>
+          &lt;button id="fadeInBtn"&gt;Fade In&lt;/button&gt;
+          &lt;button id="fadeOutBtn"&gt;Fade Out&lt;/button&gt;
+          &lt;div id="box2" style="width: 100px; height: 100px; background-color: red; display: none"&gt;&lt;/div&gt;
+  
+          &lt;script&gt;
+            $("#fadeInBtn").click(function () {
+              $("#box2").fadeIn(1000); // Fades in over 1 second
+            });
+            $("#fadeOutBtn").click(function () {
+              $("#box2").fadeOut(1000); // Fades out over 1 second
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+    <!--  -->
+    <button id="toggleBtn">Toggle</button>
+    <div
+      id="box3"
+      style="width: 100px; height: 100px; background-color: green"
+    ></div>
+    <pre>
+        <code>
+          &lt;button id="toggleBtn"&gt;Toggle&lt;/button&gt;
+          &lt;div id="box3" style="width: 100px; height: 100px; background-color: green"&gt;&lt;/div&gt;
+  
+          &lt;script&gt;
+            $("#toggleBtn").click(function () {
+              $("#box3").toggle(); // Toggles the visibility
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+    <!--  -->
+    <button id="slideUpBtn">Slide Up</button>
+    <button id="slideDownBtn">Slide Down</button>
+    <div
+      id="box4"
+      style="width: 100px; height: 100px; background-color: purple"
+    ></div>
+    <pre>
+        <code>
+          &lt;button id="slideUpBtn"&gt;Slide Up&lt;/button&gt;
+          &lt;button id="slideDownBtn"&gt;Slide Down&lt;/button&gt;
+          &lt;div id="box4" style="width: 100px; height: 100px; background-color: purple"&gt;&lt;/div&gt;
+  
+          &lt;script&gt;
+            $("#slideUpBtn").click(function () {
+              $("#box4").slideUp(); // Slides up
+            });
+            $("#slideDownBtn").click(function () {
+              $("#box4").slideDown(); // Slides down
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+    <!--  -->
+    <button id="fadeOutWithCallback">Fade Out with Callback</button>
+    <div
+      id="box5"
+      style="width: 100px; height: 100px; background-color: orange"
+    ></div>
+    <pre>
+        <code>
+          &lt;button id="fadeOutWithCallback"&gt;Fade Out with Callback&lt;/button&gt;
+          &lt;div id="box5" style="width: 100px; height: 100px; background-color: orange"&gt;&lt;/div&gt;
+  
+          &lt;script&gt;
+            $("#fadeOutWithCallback").click(function () {
+              $("#box5").fadeOut(1000, function () {
+                alert("Fade out complete!");
+              });
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+    <!--  -->
+    <button id="fadeToggleBtn">Fade Toggle (5 seconds)</button>
+    <button id="slideToggleBtn">Slide Toggle (5 seconds)</button>
+    <div
+      id="box6"
+      style="width: 100px; height: 100px; background-color: cyan"
+    ></div>
+    <pre>
+        <code>
+          &lt;button id="fadeToggleBtn"&gt;Fade Toggle (5 seconds)&lt;/button&gt;
+          &lt;button id="slideToggleBtn"&gt;Slide Toggle (5 seconds)&lt;/button&gt;
+          &lt;div id="box6" style="width: 100px; height: 100px; background-color: cyan"&gt;&lt;/div&gt;
+  
+          &lt;script&gt;
+            $("#fadeToggleBtn").click(function () {
+              $("#box6").fadeToggle(5000); // Fades in/out
+            });
+            $("#slideToggleBtn").click(function () {
+              $("#box6").slideToggle(5000); // Slides up/down
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+
+    <!--  -->
+    <button id="animateBtn">Animate</button>
+    <div
+      id="box7"
+      style="
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        position: relative;
+      "
+    ></div>
+    <pre>
+        <code>
+          &lt;button id="animateBtn"&gt;Animate&lt;/button&gt;
+          &lt;div id="box7" style="width: 100px; height: 100px; background-color: pink; position: relative"&gt;&lt;/div&gt;
+  
+          &lt;script&gt;
+            $("#animateBtn").click(function () {
+              $("#box7").animate(
+                {
+                  width: "200px",
+                  height: "200px",
+                  left: "100px",
+                },
+                1000
+              ); // Animates over 1 second
+            });
+          &lt;/script&gt;
+        </code>
+    </pre>
+
+    <script>
+      $("#hideBtn").click(function () {
+        $("#box").hide(); // Hides the element instantly
+      });
+
+      $("#showBtn").click(function () {
+        $("#box").show(); // Shows the element instantly
+      });
+
+      $("#fadeInBtn").click(function () {
+        $("#box2").fadeIn(1000); // Fades in over 1 second
+      });
+
+      $("#fadeOutBtn").click(function () {
+        $("#box2").fadeOut(1000); // Fades out over 1 second
+      });
+
+      $("#toggleBtn").click(function () {
+        $("#box3").toggle(); // Toggles the visibility
+      });
+
+      $("#slideUpBtn").click(function () {
+        $("#box4").slideUp(); // Slides up
+      });
+
+      $("#slideDownBtn").click(function () {
+        $("#box4").slideDown(); // Slides down
+      });
+
+      $("#fadeOutWithCallback").click(function () {
+        $("#box5").fadeOut(1000, function () {
+          alert("Fade out complete!");
+        });
+      });
+
+      $("#fadeToggleBtn").click(function () {
+        $("#box6").fadeToggle(5000); // Fades in/out
+      });
+
+      $("#slideToggleBtn").click(function () {
+        $("#box6").slideToggle(5000); // Slides up/down
+      });
+
+      $("#animateBtn").click(function () {
+        $("#box7").animate(
+          {
+            width: "200px",
+            height: "200px",
+            left: "100px",
+          },
+          1000
+        ); // Animates over 1 second
+      });
+    </script>
+  </body>
 </html>
