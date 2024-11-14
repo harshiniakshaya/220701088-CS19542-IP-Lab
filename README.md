@@ -10,3 +10,6 @@
 
 ## Bootstrap
 - [view](https://harshiniakshaya.github.io/220701088-CS19542-IP-Lab/Bootstrap/index.html)
+
+## jQuery
+- [view](https://harshiniakshaya.github.io/220701088-CS19542-IP-Lab/IP/Jquery/index.html)
