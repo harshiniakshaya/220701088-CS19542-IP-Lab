@@ -148,11 +148,7 @@ button.on("click", $.proxy(person.sayName, person));
       function runIsArray() {
         const items = [1, 2, 3];
         const notArray = "Hello";
-        alert(
-            $.isArray(items) +
-            "\n" +
-            $.isArray(notArray)
-        );
+        alert($.isArray(items) + "\n" + $.isArray(notArray));
       }
 
       function runTrim() {
@@ -163,7 +159,7 @@ button.on("click", $.proxy(person.sayName, person));
 
       function runExtend() {
         const defaults = { name: "Unknown", age: 0 };
-        const person = { name: "Alice", age: 25, place:"chennai" };
+        const person = { name: "Alice", age: 25, place: "chennai" };
         const extended = $.extend({}, defaults, person);
         console.log(extended);
         alert("{name: 'Alice', age: 25, place: 'chennai'}");
@@ -171,7 +167,7 @@ button.on("click", $.proxy(person.sayName, person));
 
       function runType() {
         alert(
-            $.type(123) +
+          $.type(123) +
             "\n" +
             $.type("Hello") +
             "\n" +
@@ -183,20 +179,14 @@ button.on("click", $.proxy(person.sayName, person));
 
       function runInArray() {
         const colors = ["red", "green", "blue"];
-        alert(
-            $.inArray("green", colors) +
-            "\n" +
-            $.inArray("yellow", colors)
-        );
+        alert($.inArray("green", colors) + "\n" + $.inArray("yellow", colors));
       }
 
       function runIsEmptyObject() {
         const emptyObject = {};
         const nonEmptyObject = { name: "John" };
         alert(
-            $.isEmptyObject(emptyObject) +
-            "\n" +
-            $.isEmptyObject(nonEmptyObject)
+          $.isEmptyObject(emptyObject) + "\n" + $.isEmptyObject(nonEmptyObject)
         );
       }
 
@@ -209,7 +199,7 @@ button.on("click", $.proxy(person.sayName, person));
         const squares = $.map(numbers, function (num) {
           return num * num;
         });
-        console.log(squares)
+        console.log(squares);
         alert("[1, 4, 9]");
       }
 
@@ -217,7 +207,7 @@ button.on("click", $.proxy(person.sayName, person));
         const person = {
           name: "Alice",
           sayName: function () {
-            alert("Person's Name: " + this.name);
+            alert(this.name);
           },
         };
         person.sayName.call(person);
