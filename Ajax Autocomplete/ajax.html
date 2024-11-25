@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input id="myInput" type="text" onkeyup="showSuggestions()" placeholder="Type a country">
+    <div id="suggestions"></div>
+
+    <script>
+        function showSuggestions() {
+            const input = document.getElementById("myInput").value.toLowerCase();
+            const suggestionsBox = document.getElementById("suggestions");
+            suggestionsBox.innerHTML = "";
+
+            if (input) {
+                // Perform AJAX request to fetch data from the text file
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "countries.txt", true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Parse the response text into an array of countries
+                        const countries = xhr.responseText.split("\n").map(c => c.trim());
+                        
+                        // Filter countries based on user input
+                        const filtered = countries.filter(country =>
+                            country.toLowerCase().startsWith(input)
+                        );
+
+                        // Display the filtered results
+                        filtered.forEach(country => {
+                            const suggestionItem = document.createElement("div");
+                            suggestionItem.innerText = country;
+                            suggestionItem.onclick = () => {
+                                document.getElementById("myInput").value = country;
+                                suggestionsBox.innerHTML = "";
+                            };
+                            suggestionsBox.appendChild(suggestionItem);
+                        });
+                    }
+                };
+                xhr.send();
+            }
+        }
+    </script>
+</body>
+</html>
